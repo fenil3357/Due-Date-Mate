@@ -1,0 +1,52 @@
+CREATE TABLE IF NOT EXISTS `securityuser` (
+  `SecurityUserId` varchar(38) NOT NULL,
+  `LoginId` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `UserName` varchar(100) NOT NULL,
+  `Password` varchar(300) CHARACTER SET utf8 NOT NULL,
+  `LastLoginTimeStamp` datetime DEFAULT NULL,
+  `LastLoginIpAddress` varchar(70) CHARACTER SET utf8 DEFAULT NULL,
+  `LastLoginMacAddress` varchar(48) CHARACTER SET utf8 DEFAULT NULL,
+  `Token` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `IsForceChangePW` bit(1) DEFAULT NULL,
+  `PWExpDate` datetime DEFAULT NULL,
+  `TempPassword` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `EntityType` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `EntityId` varchar(38) NOT NULL,
+  `CreatedBy` varchar(38) NOT NULL,
+  `CreatedOn` datetime NOT NULL,
+  `UpdatedBy` varchar(38) DEFAULT NULL,
+  `UpdatedOn` datetime DEFAULT NULL,
+  `Status` varchar(50) NOT NULL,
+  `StartDate` datetime NOT NULL,
+  `EndDate` datetime DEFAULT NULL,
+  `LanguageId` varchar(38) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`SecurityUserId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE IF NOT EXISTS `address` (
+  `Addressid` varchar(38) NOT NULL,
+  `EntityType` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `EntityId` varchar(38) NOT NULL,
+  `AddressType` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `AddrLine1` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `AddrLine2` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `AddrLine3` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `City` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `State` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `Country` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `PostalCode` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `POBoxNumber` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `IsPreferred` bit(1) NOT NULL,
+  `LanguageId` varchar(38) NOT NULL,
+  `CreatedBy` varchar(38) NOT NULL,
+  `CreatedOn` datetime NOT NULL,
+  `UpdatedBy` varchar(38) DEFAULT NULL,
+  `UpdatedOn` datetime DEFAULT NULL,
+  `Status` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `StartDate` datetime NOT NULL,
+  `EndDate` datetime DEFAULT NULL,
+  KEY `IX_Address_multi` (`EntityId`,`Status`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
