@@ -12,7 +12,7 @@ const cors = require("cors");
 var https = require("https");
 var fs = require("fs");
 
-const dbConn = require('./config/db.config');
+const connectDB = require('./config/db.config');
 
 const port = 5000;
 
@@ -24,6 +24,12 @@ const files = require("./route");
 files(router);
 app.use("/api", router);
 
-app.listen(port, () => {
-  console.log(`Express is running at port ${port}`);
-});
+const start = async () => {
+  try {
+      await connectDB(process.env.MONGO_URI)
+      app.listen(port, console.log(`Server is listening on port ${port}...`))
+  } catch (error) {
+      console.log(error)
+  }
+}
+start()
