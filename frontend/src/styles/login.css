@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7%;
+    border: 2px solid rgb(75, 75, 75);
+    border-radius: 16px;
+    width: 400px;
+    height: 450px;
+    flex-direction: column;
+}
+
+.inp {
+    margin-top: 10px !important;
+    width: 250px;
+    font-size: 24px;
+}
+
+.btn {
+    margin-top: 15px !important;
+    margin-left: 5px !important;
+    width: 100px;
+    height: 35px;
+}
