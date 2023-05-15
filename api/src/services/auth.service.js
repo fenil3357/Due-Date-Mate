@@ -25,7 +25,7 @@ exports.signUpService = (req, res) => {
             return;
         }
         if (doc !== null) {
-            res.status(500).json({
+            res.status(200).json({
                 Error: "Email Already in use",
                 status: false
             })
@@ -71,7 +71,7 @@ exports.loginService = (req, res) => {
             return;
         }
         if (doc === null) {
-            res.status(401).json({
+            res.status(200).json({
                 Error: "Acccount does not exists",
                 status: false
             })
@@ -96,7 +96,7 @@ exports.loginService = (req, res) => {
         }
         // Invalid Password
         else {
-            res.status(401).json({
+            res.status(200).json({
                 Error: "Invalid Password",
                 status: false
             })
