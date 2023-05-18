@@ -1,0 +1,27 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    width: 100%;
+    flex-direction: column;
+    padding: 16px;
+
+  }
+  
+  .inputField {
+    margin-top: 10px !important;
+    width: 250px;
+    font-size: 32px !important;
+    margin: 0 auto;
+  }
+  
+  .button {
+    margin-top: 15px !important;
+    margin-left: 5px !important;
+    width: 100px;
+    height: 35px;
+    display: block;
+    margin: 0 auto;
+  }
+  
