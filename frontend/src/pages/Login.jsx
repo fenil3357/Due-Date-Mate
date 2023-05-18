@@ -45,7 +45,7 @@ const Login = () => {
           setError(res.data.Error);
           setLoading(false);
         } else {
-          alert(res.data.token);
+          alert(JSON.stringify(res.data));
         }
       })
       .catch((err) => {

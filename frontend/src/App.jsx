@@ -6,6 +6,7 @@ import '@fontsource/roboto/700.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./pages/Signup"
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route path="/" element={<>Home Page</>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<center><h2>404 : Page not found</h2></center>} />
       </Routes>
     </BrowserRouter>
   );

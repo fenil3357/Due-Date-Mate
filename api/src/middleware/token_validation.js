@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 module.exports = {
   checkToken: (req, res, next) => {
-    if(req.url.includes('/auth/')) {
+    if(req.url.includes('/auth/') || req.url.includes('/group/')) {
       next();
       return;
     }
