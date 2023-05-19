@@ -3,7 +3,7 @@ import { TextField, Button } from "@material-ui/core";
 import axios from "axios";
 import "../styles/AddStudents.css";
 const AddStudents = () => {
-  const [students, setstudents] = useState([
+  const [students, setStudents] = useState([
     {
       name: "",
       enroll: "",
@@ -22,7 +22,7 @@ const AddStudents = () => {
 
       const response = await axios.post("/add-students", studentData);
       console.log("API response:", response.data);
-      setstudents([
+      setStudents([
         {
           name: "",
           enroll: "",
@@ -36,14 +36,16 @@ const AddStudents = () => {
   };
 
   const handleChange = (index, event) => {
-    let data = [...students];
-    data[index][event.target.name] = event.target.value;
-    console.log(data);
-    setstudents(data);
+    const updatedStudents = [...students];
+    updatedStudents[index] = {
+      ...updatedStudents[index],
+      [event.target.name]: event.target.value
+    };
+    setStudents(updatedStudents); 
   };
   const addButtonHandler = () => {
     let newInputfields = { name: "", enroll: "", mobile: "", email: "" };
-    setstudents([...students, newInputfields]);
+    setStudents([...students, newInputfields]);
   };
 
   return (
@@ -89,6 +91,7 @@ const AddStudents = () => {
                 value={student.email}
                 onChange={(event) => handleChange(index, event)}
               />
+            
             </div>
           );
         })}
