@@ -1,0 +1,55 @@
+
+body{
+margin:10px;
+}
+form {
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+justify-content: space-between;
+  padding: 30px;
+}
+.inputFieldsContainer {
+  display: flex;
+
+  gap:20px;
+ 
+ /* Adjust the gap size as needed */
+}
+
+
+
+.inp {
+  margin-bottom: 20px;
+  
+  width: calc(50% - 10px);
+}
+
+.AddBtn {
+  top:10px;
+
+  margin-right: 10px;
+}
+
+.SubBtn {
+  position: absolute;
+  bottom: 0;;
+  top:20px;
+  right: 0;
+}
+.AddBtn,
+.SubBtn {
+
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+  }
+
+  .inp {
+    width: 100%;
+  }
+}

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { TextField, Button } from '@material-ui/core';
-import axios from 'axios';
-import '../styles/CreateGroup.css';
+import React, { useState } from "react";
+import { TextField, Button } from "@material-ui/core";
+import axios from "axios";
+import "../styles/CreateGroup.css";
 
-function CreateGroup() {
-  const [text, setText] = useState('');
+const CreateGroup = () => {
+  const [text, setText] = useState("");
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('/create-group', { text });
+      const response = await axios.post("/create-group", { text });
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -35,6 +35,6 @@ function CreateGroup() {
       </Button>
     </div>
   );
-}
+};
 
 export default CreateGroup;
