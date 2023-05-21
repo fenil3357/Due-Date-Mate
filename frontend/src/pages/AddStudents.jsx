@@ -19,7 +19,6 @@ const AddStudents = () => {
         mobile: student.mobile,
         email: student.email,
       }));
-
       const response = await axios.post("/add-students", studentData);
       console.log("API response:", response.data);
       setStudents([

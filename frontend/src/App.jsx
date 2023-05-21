@@ -25,7 +25,8 @@ const Home = () => {
     </center>
   );
 };
-
+import SetReminder from "./pages/SetReminder";
+import SendingReminder from "./pages/SendingReminder";
 function App() {
   return (
     <BrowserRouter>
@@ -36,6 +37,8 @@ function App() {
         <Route path="/create-group" element={<CreateGroup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/add-students" element={<AddStudents />} />
+        <Route path="/set-reminder" element={<SetReminder/>}/>
+        <Route path="/sending-reminder" element={<SendingReminder/>}/>
         <Route
           path="*"
           element={
