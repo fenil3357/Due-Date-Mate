@@ -9,7 +9,7 @@ const groupSchema = new mongoose.Schema({
         type:String,
         required:[true, 'Group name must be provided']
     },
-    faculty:{
+    facultyEmail:{
         type:String,
         required:[true, 'Faculty email must be provided']
     },

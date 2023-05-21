@@ -17,7 +17,7 @@ const CreateGroup = () => {
 
   return (
     <div className="root">
-      <h3>Create Group</h3>
+      <h3>Create New Group</h3>
       <TextField
         className="inputField"
         label="Enter group name"

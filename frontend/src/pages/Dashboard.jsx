@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/dashboard.css";
 import Navbar from "../components/Navbar";
-import Tab from "../components/Tab";
 import Grid from "../components/Grid"
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+  useEffect((e) => {
+    if (localStorage.getItem("accessToken") === null) {
+      navigate("/login")
+    }
+  })
   return (
     <div className="dash">
-    <div className="nav">
-      <Navbar />
-    </div>
+      <div className="nav">
+        <Navbar />
+      </div>
       <div className="content">
         <div className="tab">
-          {/* <Tab /> */}
-          <Grid className="grid"/>
+          <Grid className="grid" />
         </div>
       </div>
     </div>

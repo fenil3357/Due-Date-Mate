@@ -6,7 +6,7 @@ import "../styles/login.css";
 import axios from "axios";
 
 const Signup = () => {
-  document.title = "DueDateMate | Sign Up";
+  document.title = "Sign Up";
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -57,7 +57,11 @@ const Signup = () => {
       });
   };
 
-  useEffect((e) => {}, [loading, error]);
+  useEffect((e) => {
+    if (localStorage.getItem("accessToken") !== null) {
+      navigate("/dashboard");
+    }
+  }, [loading, error, navigate]);
 
   return (
     <div className="bodyContainer">

@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const router = express.Router();
+const { checkToken } = require("./src/middleware/token_validation")
 
 require("dotenv").config();
 
@@ -19,6 +20,7 @@ const port = 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(checkToken)
 
 const files = require("./route");
 files(router);

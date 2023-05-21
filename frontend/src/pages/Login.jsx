@@ -6,7 +6,7 @@ import "../styles/login.css";
 import axios from "axios";
 
 const Login = () => {
-  document.title = "DueDateMate | Login";
+  document.title = "Login";
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -45,7 +45,10 @@ const Login = () => {
           setError(res.data.Error);
           setLoading(false);
         } else {
-          alert(JSON.stringify(res.data));
+          localStorage.clear();
+          localStorage.setItem("accessToken", res.data.token);
+          localStorage.setItem("faculty", JSON.stringify(res.data.Faculty));
+          navigate("/dashboard");
         }
       })
       .catch((err) => {
@@ -54,7 +57,11 @@ const Login = () => {
       });
   };
 
-  useEffect((e) => {}, [loading, error]);
+  useEffect((e) => {
+    if (localStorage.getItem("accessToken") !== null) {
+      navigate("/dashboard");
+    }
+  }, [loading, error, navigate]);
 
   return (
     <div className="bodyContainer">
@@ -91,7 +98,7 @@ const Login = () => {
             </Button>
           </a>
         </div>
-        
+
         {error === "" ? <></> : <p className="err">{error}</p>}
       </div>
     </div>
