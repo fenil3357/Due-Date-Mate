@@ -16,3 +16,25 @@ body {
   width: 100%;
   z-index: 1;
 }
+
+.grd { 
+  width: 40vb !important;
+}
+.tpy {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+}
+.tpy h4 {
+  margin-top: 6px;
+}
+
+.bx {
+  border: 2px solid rgb(177, 177, 177);
+  border-radius: 4px;
+}
+
+.bx :hover {
+  cursor: pointer;
+}

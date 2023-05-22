@@ -6,9 +6,10 @@ module.exports = {
       next();
       return;
     }
-    let token = req.get("authorization");
+    let token = req.get("Authorization");
 
     if (!token || !req.body.facultyEmail) {
+      console.log("Token not provided");
       return res.status(403).json({
         Error: "Access Denied",
         ERR_CODE: "JWT_ERROR",
