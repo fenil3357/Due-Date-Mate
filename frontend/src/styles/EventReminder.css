@@ -1,0 +1,20 @@
+.eventDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .formContainer {
+    width: 400px;
+  }
+  
+  .inp1 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    margin-top: 10px;
+  }
+  
