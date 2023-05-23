@@ -8,7 +8,7 @@ import {
   TextField,
   Button,
 } from '@material-ui/core';
-import "../styles/SendingReminder.css"
+import "../styles/sending_reminder.css"
 const SendingReminder = () => {
   const [groups, setGroups] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');

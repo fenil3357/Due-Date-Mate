@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 import FormReminder from "../components/EventReminder";
 import EventReminder from "../components/FormReminder";
-import "../styles/SendingReminder.css"
+import "../styles/sending_reminder.css"
 const SetReminder = () => {
   const [open, setOpen] = useState(false);
   const [selectedButton, setSelectedButton] = useState(null);

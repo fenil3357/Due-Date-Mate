@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 import axios from "axios";
-import "../styles/AddStudents.css";
+import "../styles/add_students.css";
 const AddStudents = () => {
   const [students, setStudents] = useState([
     {

@@ -5,7 +5,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import dayjs from "dayjs";
 import axios from "axios";
-import "../styles/EventReminder.css"
+import "../styles/event_reminder.css"
 
 const EventReminder = () => {
   const [name, setName] = useState("");

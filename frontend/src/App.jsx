@@ -1,4 +1,3 @@
-import "./App.css";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -11,6 +10,8 @@ import Dashboard from "./pages/Dashboard";
 import AddStudents from "./pages/AddStudents";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import SetReminder from "./pages/SetReminder";
+import SendingReminder from "./pages/SendingReminder";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -25,8 +26,7 @@ const Home = () => {
     </center>
   );
 };
-import SetReminder from "./pages/SetReminder";
-import SendingReminder from "./pages/SendingReminder";
+
 function App() {
   return (
     <BrowserRouter>

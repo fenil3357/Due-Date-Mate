@@ -15,6 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import "../styles/navbar.css"
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -154,7 +155,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} className="nav">
       <AppBar position="static">
         <Toolbar>
           <IconButton

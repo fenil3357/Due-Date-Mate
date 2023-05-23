@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 import axios from "axios";
-import "../styles/CreateGroup.css";
+import "../styles/create_group.css";
 
 const CreateGroup = () => {
   const [text, setText] = useState("");
