@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_API_URL } from "../config/api";
+import {token, faculty} from "../config/user"
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -27,7 +28,7 @@ const Dashboard = () => {
   const loadGroups = async () => {
 
     const reqData = {
-      facultyEmail: JSON.parse(localStorage.getItem("faculty")).email,
+      facultyEmail: faculty.email,
     };
 
     await axios
@@ -36,7 +37,7 @@ const Dashboard = () => {
         reqData,
         {
           headers: {
-            'Authorization': `Bearer ${localStorage.getItem("accessToken")}`,
+            'Authorization': `Bearer ${token}`,
           },
         }
       )
@@ -44,7 +45,6 @@ const Dashboard = () => {
         if (res.data.status === false) {
           console.log(res.data.Error)
         } else {
-          console.log(res.data.groups);
           setGroups(res.data.groups);
         }
       })
@@ -58,7 +58,7 @@ const Dashboard = () => {
       navigate("/login");
     }
     loadGroups();
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="dash">
@@ -80,10 +80,10 @@ const Dashboard = () => {
               >
                 <Grid container wrap="nowrap" spacing={2} className="grd">
                   <Grid item>
-                    <Avatar>BE</Avatar>
+                    <Avatar>{(group.name[0] + group.name[1]).toUpperCase()}</Avatar>
                   </Grid>
                   <Grid item xs>
-                    <Typography className="tpy">
+                    <Typography className="tpy" component={'span'}>
                       <h4>{group.name}</h4>
                     </Typography>
                   </Grid>
