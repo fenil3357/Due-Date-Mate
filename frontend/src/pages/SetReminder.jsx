@@ -17,17 +17,17 @@ const SetReminder = () => {
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setOpen(true);
   };
 
   const handleButton1Click = () => {
     setSelectedButton("form");
-    handleClose();
+    setOpen(false);
   };
 
   const handleButton2Click = () => {
     setSelectedButton("event");
-    handleClose();
+    setOpen(false);
   };
 
   useEffect(() => {

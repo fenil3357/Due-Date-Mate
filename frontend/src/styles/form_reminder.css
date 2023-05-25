@@ -18,3 +18,9 @@
     margin-top: 10px;
   }
   
+  .err { 
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    flex-wrap: wrap;
+}

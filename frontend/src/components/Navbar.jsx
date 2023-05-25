@@ -6,16 +6,16 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-import Badge from "@mui/material/Badge";
+// import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+// import AccountCircle from "@mui/icons-material/AccountCircle";
+// import MailIcon from "@mui/icons-material/Mail";
+// import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import "../styles/navbar.css"
+import "../styles/navbar.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -102,10 +102,14 @@ export default function PrimarySearchAppBar() {
         <p>Profile</p>
       </MenuItem>
       <MenuItem>
-        <p>Create Group</p>
+        <a href="/create-group">
+          <p>Create Group</p>
+        </a>
       </MenuItem>
       <MenuItem>
-        <p>Create Reminder</p>
+        <a href="/set-reminder">
+          <p>Create Reminder</p>
+        </a>
       </MenuItem>
       <MenuItem>
         <p>Log out</p>
@@ -143,10 +147,14 @@ export default function PrimarySearchAppBar() {
         <p>Profile</p>
       </MenuItem>
       <MenuItem>
-        <p>Create Group</p>
+        <a href="/create-group">
+          <p>Create Group</p>
+        </a>
       </MenuItem>
       <MenuItem>
-        <p>Create Reminder</p>
+        <a href="/set-reminder">
+          <p>Create Reminder</p>
+        </a>
       </MenuItem>
       <MenuItem>
         <p>Log out</p>

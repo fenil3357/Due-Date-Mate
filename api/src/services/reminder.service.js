@@ -53,7 +53,7 @@ exports.createFormService = (req, res) => {
         else {
             res.status(200).json({
                 Msg: "Form Reminder Created Successfully!",
-                event: data,
+                form: data,
                 status: true
             })
         }
