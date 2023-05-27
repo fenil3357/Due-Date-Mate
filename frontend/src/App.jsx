@@ -11,7 +11,6 @@ import AddStudents from "./pages/AddStudents";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import SetReminder from "./pages/SetReminder";
-import SendingReminder from "./pages/SendingReminder";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -37,8 +36,7 @@ function App() {
         <Route path="/create-group" element={<CreateGroup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/add-students" element={<AddStudents />} />
-        <Route path="/set-reminder" element={<SetReminder/>}/>
-        <Route path="/sending-reminder" element={<SendingReminder/>}/>
+        <Route path="/set-reminder" element={<SetReminder />} />
         <Route
           path="*"
           element={

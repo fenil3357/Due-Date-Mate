@@ -1,26 +1,157 @@
-.formDiv {
-    display: flex;
-    align-items: center;
+.formReminderContainer,
+.forwardReminderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.forwardReminderContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding:8px;
+  max-height: 100%;
+}
+
+.searchBarContainer {
+  margin-top: 5px;
+}
+
+.groupsContainer {
+
+  margin-top: 5px;
+}
+
+.forward-message {
+  background-color: #e6e6e600;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  color: #666666;
+}
+.cross-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: red;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.forward-icon {
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+.forward-text {
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .formReminderContainer,
+  .forwardReminderContainer {
+    
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+ flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 0;
   }
-  
+}
+
+.formDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.formContainer {
+  width: 400px;
+}
+
+@media (max-width: 767px) {
+  .formDiv {
+
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
   .formContainer {
-    width: 400px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
   }
-  
-  .inp1 {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .button {
-    margin-top: 10px;
-  }
-  
-  .err { 
-    margin-top: 10px;
-    text-align: center;
-    color: rgb(255, 0, 0);
-    flex-wrap: wrap;
+}
+
+.inp1 {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.formDate {
+  background-color: #e6e6e600;
+  color: #a1a1a1;
+  padding: 15px 14px;
+}
+
+.formDate {
+  width: 100%;
+  font-family: "poppins", sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  border-radius: 4px;
+}
+
+.formDate:focus,
+.formDate:hover {
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.87);
+}
+
+.formDate::placeholder {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.formDate:-webkit-datetime-edit {
+  padding: 0;
+  margin: 0;
+}
+
+.formDate::-webkit-inner-spin-button,
+.formDate::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.formDate::-webkit-clear-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.button {
+  margin-top: 10px;
+}
+
+.err {
+  margin-top: 10px;
+  text-align: center;
+  color: rgb(255, 0, 0);
+  flex-wrap: wrap;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.checkboxLabel {
+  font-size: 16px;
+}
+
+.sendButton {
+  margin-top: 20px;
 }
