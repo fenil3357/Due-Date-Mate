@@ -14,7 +14,6 @@ const CreateGroup = () => {
       console.error(error);
     }
   };
-
   return (
     <div className="root">
       <h3>Create New Group</h3>
