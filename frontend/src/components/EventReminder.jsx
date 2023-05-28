@@ -19,16 +19,30 @@ const ForwardReminder = ({ onClose }) => {
   const [selectedGroups, setSelectedGroups] = useState([]);
 
   useEffect(() => {
-    const fetchGroups = async () => {
-      try {
-        const response = await axios.get("/group/get-all");
-        setGroups(response.data);
-      } catch (error) {
-        console.error("Error fetching groups:", error);
-      }
+    const loadGroups = async () => {
+      const reqData = {
+        facultyEmail: faculty.email,
+      };
+
+      await axios
+        .post(BASE_API_URL + "group/get-all", reqData, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          if (res.data.status === false) {
+            console.log(res.data.Error);
+          } else {
+            setGroups(res.data.groups);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     };
 
-    fetchGroups();
+    loadGroups();
   }, []);
 
   const handleCheckboxChange = (event, group) => {
@@ -55,7 +69,7 @@ const ForwardReminder = ({ onClose }) => {
     <div className="forwardReminderContainer">
       <div className="forward-message ">
         <span class="forward-icon">&#10140;</span>
-        <span class="forward-text">Forward Reminder</span>
+        <span class="forward-text">Send Reminder to Groups</span>
         <Button className="cross-button" onClick={onClose}>
           &#10005;
         </Button>
@@ -81,18 +95,16 @@ const ForwardReminder = ({ onClose }) => {
               }
               label={group.name}
             />
-            <Grid item xs={12}>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSendButtonClick}
-                disabled={selectedGroups.length === 0}
-              >
-                Send
-              </Button>
-            </Grid>
           </Grid>
         ))}
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleSendButtonClick}
+          disabled={selectedGroups.length === 0}
+        >
+          Send
+        </Button>
       </div>
     </div>
   );
@@ -114,7 +126,6 @@ const EventReminder = () => {
 
   const onCreateHandler = async (event) => {
     event.preventDefault();
-    setShowForwardReminder(true);
     setLoading(true);
     setError("");
 
@@ -143,8 +154,8 @@ const EventReminder = () => {
           setError(res.data.Error);
           setLoading(false);
         } else {
-          alert(JSON.stringify(res.data.event));
           setLoading(false);
+          setShowForwardReminder(true);
         }
       })
       .catch((err) => {
@@ -187,7 +198,7 @@ const EventReminder = () => {
               name="remname"
               value={name}
               onChange={(event) => setName(event.target.value)}
-              disabled={loading}
+              disabled={loading || showForwardReminder}
             />
             <TextField
               type="text"
@@ -197,7 +208,7 @@ const EventReminder = () => {
               name="remdes"
               value={description}
               onChange={(event) => setDescription(event.target.value)}
-              disabled={loading}
+              disabled={loading || showForwardReminder}
             />
 
             <input
@@ -206,7 +217,7 @@ const EventReminder = () => {
               value={(datetime || "").toString().substring(0, 16)}
               onChange={handleChange}
               min={currentDateTime}
-              disabled={loading}
+              disabled={loading || showForwardReminder}
             />
 
             {error === "" ? <></> : <p className="err">{error}</p>}
@@ -216,7 +227,7 @@ const EventReminder = () => {
               variant="contained"
               color="primary"
               onClick={onCreateHandler}
-              disabled={loading}
+              disabled={loading || showForwardReminder}
             >
               Create
             </Button>
