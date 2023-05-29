@@ -7,7 +7,8 @@ import {
 } from "@material-ui/core";
 import FormReminder from "../components/EventReminder";
 import EventReminder from "../components/FormReminder";
-import "../styles/set_reminder.css"
+import "../styles/set_reminder.css";
+
 const SetReminder = () => {
   const [open, setOpen] = useState(false);
   const [selectedButton, setSelectedButton] = useState(null);
@@ -36,21 +37,23 @@ const SetReminder = () => {
 
   return (
     <div>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogContent>
-          <p>Which Type of reminder you want to create?</p>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleButton1Click} color="primary">
-            Event Reminder (forall)
-          </Button>
-          <Button onClick={handleButton2Click} color="primary">
-            Form Reminder
-          </Button>
-        </DialogActions>
-      </Dialog>
-      {selectedButton === "form" && <FormReminder />}
-      {selectedButton === "event" && <EventReminder />}
+      <div>
+        <Dialog open={open} onClose={handleClose}>
+          <DialogContent>
+            <p>Which Type of reminder you want to create?</p>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleButton1Click} color="primary">
+              Event Reminder (forall)
+            </Button>
+            <Button onClick={handleButton2Click} color="primary">
+              Form Reminder
+            </Button>
+          </DialogActions>
+        </Dialog>
+        {selectedButton === "form" && <FormReminder />}
+        {selectedButton === "event" && <EventReminder />}
+      </div>
     </div>
   );
 };

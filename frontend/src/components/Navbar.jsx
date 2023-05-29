@@ -99,6 +99,11 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem>
+        <a href="/dashboard">
+          <p>Dashboard</p>
+        </a>
+      </MenuItem>
+      <MenuItem>
         <p>Profile</p>
       </MenuItem>
       <MenuItem>
@@ -144,6 +149,11 @@ export default function PrimarySearchAppBar() {
           <AccountCircle />
         </IconButton> */}
       <MenuItem>
+        <a href="/dashboard">
+          <p>Dashboard</p>
+        </a>
+      </MenuItem>
+      <MenuItem>
         <p>Profile</p>
       </MenuItem>
       <MenuItem>
@@ -179,7 +189,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            Dashboard
+            Due Date Mate
           </Typography>
           <Search>
             <SearchIconWrapper>

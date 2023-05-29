@@ -1,12 +1,12 @@
 body {
   margin: 10px;
 }
-.heading{
+/* .heading{
   position: sticky;
   top: 0;
   background-color: #ffffff;
   z-index: 1;
-}
+} */
 form {
   border: 1px solid black;
   border-radius: 10px;
@@ -16,6 +16,7 @@ form {
   padding: 30px;
   max-height: 100%;
   overflow-y: auto;
+  margin-top: 80px;
 }
 .inputFieldsContainer {
   display: flex;

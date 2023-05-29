@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 import axios from "axios";
 import "../styles/add_students.css";
+import Navbar from "../components/Navbar";
+import "../styles/navbar.css";
+
 const AddStudents = () => {
   const [students, setStudents] = useState([
     {
@@ -38,9 +41,9 @@ const AddStudents = () => {
     const updatedStudents = [...students];
     updatedStudents[index] = {
       ...updatedStudents[index],
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     };
-    setStudents(updatedStudents); 
+    setStudents(updatedStudents);
   };
   const addButtonHandler = () => {
     let newInputfields = { name: "", enroll: "", mobile: "", email: "" };
@@ -49,7 +52,10 @@ const AddStudents = () => {
 
   return (
     <div>
-      <h1 className="heading">Add Students</h1>
+      <div className="nav">
+        <Navbar />
+      </div>
+      {/* <h1 className="heading">Add Students</h1> */}
       <form onSubmit={handleSubmit}>
         {students.map((student, index) => {
           return (
@@ -82,7 +88,7 @@ const AddStudents = () => {
                 onChange={(event) => handleChange(index, event)}
               />
               <TextField
-               type="email"
+                type="email"
                 className="inp1"
                 variant="outlined"
                 label="Email Id"
@@ -90,7 +96,6 @@ const AddStudents = () => {
                 value={student.email}
                 onChange={(event) => handleChange(index, event)}
               />
-            
             </div>
           );
         })}

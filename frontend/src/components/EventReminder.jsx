@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 import { token, faculty } from "../config/user";
 import { BASE_API_URL } from "../config/api";
 import "../styles/event_reminder.css";
+import Navbar from "../components/Navbar";
+import "../styles/navbar.css"
 
 const ForwardReminder = ({ onClose }) => {
   const [groups, setGroups] = useState([]);
@@ -187,6 +189,9 @@ const EventReminder = () => {
 
   return (
     <div className="eventReminderContainer">
+      <div className="nav">
+        <Navbar />
+      </div>
       <div className="eventDiv">
         <div className="formContainer">
           <form>

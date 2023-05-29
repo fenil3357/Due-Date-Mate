@@ -11,6 +11,8 @@ import "../styles/form_reminder.css";
 import { useNavigate } from "react-router-dom";
 import { token, faculty } from "../config/user";
 import { BASE_API_URL } from "../config/api";
+import Navbar from "../components/Navbar"
+import "../styles/navbar.css"
 
 const ForwardReminder = ({ onClose }) => {
   const [groups, setGroups] = useState([]);
@@ -198,6 +200,9 @@ const FormReminder = () => {
 
   return (
     <div className="formReminderContainer">
+    <div className="nav">
+        <Navbar />
+      </div>
       <div className="formDiv">
         <div className="formContainer">
           <form>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 import axios from "axios";
 import "../styles/create_group.css";
+import "../styles/navbar.css"
+import Navbar from "../components/Navbar"
 
 const CreateGroup = () => {
   const [text, setText] = useState("");
@@ -16,6 +18,9 @@ const CreateGroup = () => {
   };
   return (
     <div className="root">
+    <div className="nav">
+        <Navbar />
+      </div>
       <h3>Create New Group</h3>
       <TextField
         className="inputField"
