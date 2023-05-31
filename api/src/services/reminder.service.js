@@ -87,7 +87,6 @@ exports.sendEventReminderToGroupsService = (req, res) => {
             })
         }
     })
-
 }
 
 // Send Form Reminder to Groups Service
@@ -117,5 +116,62 @@ exports.sendFormReminderToGroupsService = (req, res) => {
             })
         }
     })
+}
 
+// Get All Event Reminders Service
+exports.getAllEventRemindersService = (req, res) => {
+    const body = req.body;
+
+    if (!body.groupId || !body.facultyEmail) {
+        res.status(400).json({
+            Error: "Please provide all parameters",
+            status: false
+        })
+        return;
+    }
+
+    reminderModel.getAllEventRemindersModel(body, (err, data) => {
+        if (err) {
+            res.status(500).json({
+                Error: err.message,
+                status: false
+            });
+            return;
+        }
+        else {
+            res.status(200).json({
+                Events: data,
+                status: true
+            })
+        }
+    })
+}
+
+// Get All Form Reminders Service
+exports.getAllFormRemindersService = (req, res) => {
+    const body = req.body;
+
+    if (!body.groupId || !body.facultyEmail) {
+        res.status(400).json({
+            Error: "Please provide all parameters",
+            status: false
+        })
+        return;
+    }
+
+    reminderModel.getAllFormRemindersModel(body, (err, data) => {
+        if (err) {
+            res.status(500).json({
+                Error: err.message,
+                status: false
+            });
+            return;
+        }
+        else {
+            res.status(200).json({
+                Forms: data,
+                status: true
+            })
+        }
+    })
 }
