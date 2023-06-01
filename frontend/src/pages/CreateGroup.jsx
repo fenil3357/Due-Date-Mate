@@ -4,7 +4,7 @@ import axios from "axios";
 import "../styles/create_group.css";
 import "../styles/navbar.css";
 import Navbar from "../components/Navbar";
-
+import "../styles/add_students.css"
 const AddStudents = ({ onClose }) => {
   const [students, setStudents] = useState([
     {
@@ -53,8 +53,8 @@ const AddStudents = ({ onClose }) => {
   return (
     <div>
       <div className="forward-message">
-        <span class="forward-icon">&#10140;</span>
-        <span class="forward-text">Add Students to Groups</span>
+        <span className="forward-icon">&#10140;</span>
+        <span className="forward-text">Add Students to Groups</span>
         <Button className="cross-button" onClick={onClose}>
           &#10005;
         </Button>
