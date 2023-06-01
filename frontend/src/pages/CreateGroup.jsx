@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 import axios from "axios";
 import "../styles/create_group.css";
-import "../styles/navbar.css";
 import Navbar from "../components/Navbar";
 import "../styles/add_students.css"
 const AddStudents = ({ onClose }) => {
@@ -135,7 +134,6 @@ const CreateGroup = () => {
   };
   const handleSubmit = async () => {
     try {
-    
       setIsButtonDisabled(true);
       setShowAddStudents(true);
       const response = await axios.post("/create-group", { text });
