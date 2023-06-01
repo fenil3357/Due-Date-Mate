@@ -13,7 +13,7 @@
   flex-direction: column;
   border: 1px solid black;
   border-radius: 4px;
-  padding:8px;
+  padding: 8px;
   max-height: 100%;
 }
 
@@ -22,7 +22,6 @@
 }
 
 .groupsContainer {
-
   margin-top: 5px;
 }
 
@@ -50,13 +49,12 @@
   font-weight: bold;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .formReminderContainer,
   .forwardReminderContainer {
-    
     justify-content: center;
     align-items: center;
- flex-direction: column;
+    flex-direction: column;
     margin-right: 20px;
     margin-bottom: 0;
   }
@@ -70,13 +68,12 @@
 }
 
 .formContainer {
-  width: 400px;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
   .formDiv {
-
-    height: auto;
+    width:90%;
   }
 }
 
@@ -84,7 +81,7 @@
   .formContainer {
     justify-content: center;
     align-items: center;
-    width: 90%;
+    margin-bottom: 50%;
   }
 }
 

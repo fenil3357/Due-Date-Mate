@@ -7,7 +7,6 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import CreateGroup from "./pages/CreateGroup";
 import Dashboard from "./pages/Dashboard";
-import AddStudents from "./pages/AddStudents";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import SetReminder from "./pages/SetReminder";
@@ -35,7 +34,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/create-group" element={<CreateGroup />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/add-students" element={<AddStudents />} />
         <Route path="/set-reminder" element={<SetReminder />} />
         <Route
           path="*"

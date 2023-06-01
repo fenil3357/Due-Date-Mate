@@ -13,7 +13,7 @@
   flex-direction: column;
   border: 1px solid black;
   border-radius: 4px;
-  padding:8px;
+  padding: 8px;
   max-height: 100%;
 }
 
@@ -22,7 +22,6 @@
 }
 
 .groupsContainer {
-
   margin-top: 5px;
 }
 
@@ -53,10 +52,9 @@
 @media (max-width: 480px) {
   .eventReminderContainer,
   .forwardReminderContainer {
-    
     justify-content: center;
     align-items: center;
- flex-direction: column;
+    flex-direction: column;
     margin-right: 20px;
     margin-bottom: 0;
   }
@@ -75,8 +73,7 @@
 
 @media (max-width: 767px) {
   .eventDiv {
-
-    height: auto;
+    width: 90%;
   }
 }
 
