@@ -1,4 +1,5 @@
 const groupModel = require("./schema/group")
+const studentModel = require("./schema/student")
 const crypto = require("crypto");
 
 // Create Group Model
@@ -26,4 +27,26 @@ exports.getAllGroups = async (email, callBack) => {
             callBack(null, doc);
         })
         .catch(err => callBack(err))
+}
+
+// Add Students To Group
+exports.addStudentsToGroupModel = async (data, callBack) => {
+    const groupId = data.groupId;
+    const studentData = data.students;
+
+    for (let i = 0; i < studentData.length; i++) {
+        if (!studentData[i].name || !studentData[i].enNumber || !studentData[i].email) {
+            callBack("Please provide all student parameters!");
+            return;
+        }
+        studentData[i].id = crypto.randomUUID();
+        studentData[i].groupId = groupId;
+
+        let student = new studentModel(studentData[i]);
+
+        await student.save()
+            .then(doc => { })
+            .catch(err => callBack(err))
+    }
+    callBack(null, null);
 }
