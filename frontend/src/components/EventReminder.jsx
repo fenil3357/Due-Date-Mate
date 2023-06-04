@@ -13,7 +13,7 @@ import { token, faculty } from "../config/user";
 import { BASE_API_URL } from "../config/api";
 import "../styles/event_reminder.css";
 import Navbar from "../components/Navbar";
-import "../styles/navbar.css"
+import "../styles/navbar.css";
 
 const ForwardReminder = ({ onClose }) => {
   const [groups, setGroups] = useState([]);
