@@ -1,0 +1,136 @@
+.group-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  .toggle-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top:50px;
+    margin-bottom: 20px;
+  }
+  .toggle-text {
+    display: none;
+    color: #777;
+    margin-left: 10px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toggle-container:hover .toggle-text {
+    display: block;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    align-items: center;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px;
+  }
+  
+  .formReminderCard {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .eventReminderCard {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .formReminderCard .MuiTypography-root:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .eventReminderCard .MuiTypography-root:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .formReminderCard .MuiTypography-root:not(:first-child) {
+    margin-bottom: 4px;
+  }
+  
+  .eventReminderCard .MuiTypography-root:not(:first-child) {
+    margin-bottom: 4px;
+  }
+  
+  .card-content {
+    padding: 0;
+  }
+  
+  .card-content .MuiTypography-root {
+    margin-bottom: 8px;
+  }

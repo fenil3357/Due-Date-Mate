@@ -5,6 +5,7 @@ import "@fontsource/roboto/700.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Group from "./pages/Group";
 import CreateGroup from "./pages/CreateGroup";
 import Dashboard from "./pages/Dashboard";
 import { useNavigate } from "react-router-dom";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/groups" element={<Group />} />
         <Route path="/create-group" element={<CreateGroup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/set-reminder" element={<SetReminder />} />
