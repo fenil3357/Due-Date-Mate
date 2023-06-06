@@ -19,7 +19,7 @@ const studentSchema = new mongoose.Schema({
     },
     groupId: {
         type:String,
-        required:['Group id must be provided']
+        required:[true, 'Group id must be provided']
     }
 })
 

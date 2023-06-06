@@ -36,7 +36,7 @@ var sendCustomEmailService = (mailOptions, callBack) => {
       console.log(err);
     }
     else {
-      console.log("Email sent successfully to : ", mailOptions.to);
+      callBack(null, res);
     }
   })
 }

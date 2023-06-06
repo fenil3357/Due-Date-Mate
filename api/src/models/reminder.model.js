@@ -1,4 +1,5 @@
 const crypto = require("crypto");
+const studentModel = require("./schema/student")
 const eventModel = require("./schema/event")
 const formModel = require("./schema/form")
 const eventGroupModel = require("./schema/event_reminder_group")
@@ -40,7 +41,26 @@ exports.sendEventReminderToGroupsModel = async (data, callBack) => {
             .then(doc => { })
             .catch(err => callBack(err));
     }
-    callBack(null, null);
+    // Fetch Event From reminderId
+    let res = {
+        event : {},
+        students: {}
+    }
+
+    await eventModel.find({id: data.reminderId})
+        .then(doc => {
+            res.event = doc;
+        })
+        .catch(err => callBack(err))
+
+    // Fetch All Students From groupId
+    await studentModel.find({groupId : data.groups[0]})
+        .then(doc => {
+            res.students = doc;
+        })
+        .catch(err => callBack(err));
+
+    callBack(null, res);
 }
 
 // Send Form Reminder To Groups Model
