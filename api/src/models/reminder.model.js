@@ -43,23 +43,29 @@ exports.sendEventReminderToGroupsModel = async (data, callBack) => {
     }
     // Fetch Event From reminderId
     let res = {
-        event : {},
+        event: {},
         students: {}
     }
 
-    await eventModel.find({id: data.reminderId})
+    await eventModel.find({ id: data.reminderId })
         .then(doc => {
             res.event = doc;
         })
         .catch(err => callBack(err))
 
     // Fetch All Students From groupId
-    await studentModel.find({groupId : data.groups[0]})
-        .then(doc => {
-            res.students = doc;
-        })
-        .catch(err => callBack(err));
+    let studentData = [];
 
+    for (let i = 0; i < data.groups.length; i++) {
+        await studentModel.find({ groupId: data.groups[i] })
+            .then(doc => {
+                for (let j = 0; j < doc.length; j++) {
+                    studentData.push(doc[j]);
+                }
+            })
+            .catch(err => callBack(err));
+    }
+    res.students = studentData;
     callBack(null, res);
 }
 
@@ -77,7 +83,32 @@ exports.sendFormReminderToGroupsModel = async (data, callBack) => {
             .then(doc => { })
             .catch(err => callBack(err));
     }
-    callBack(null, null);
+    // Fetch Form from reminderId
+    let res = {
+        form: {},
+        students: {}
+    }
+
+    await formModel.find({ id: data.reminderId })
+        .then(doc => {
+            res.form = doc;
+        })
+        .catch(err => callBack(err));
+
+    // Fetch All Students form groupId
+    let studentData = [];
+
+    for (let i = 0; i < data.groups.length; i++) {
+        await studentModel.find({ groupId: data.groups[i] })
+            .then(doc => {
+                for (let j = 0; j < doc.length; j++) {
+                    studentData.push(doc[j]);
+                }
+            })
+            .catch(err => callBack(err));
+    }
+    res.students = studentData;
+    callBack(null, res);
 }
 
 // Get All Event Reminders Model

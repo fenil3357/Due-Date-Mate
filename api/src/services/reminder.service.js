@@ -1,5 +1,5 @@
 const reminderModel = require("../models/reminder.model")
-const { eventReminderEmailOptions } = require("../helper/mailOptions")
+const { eventReminderEmailOptions, formReminderEmailOptions } = require("../helper/mailOptions")
 const sendEmail = require("../helper/mailHelper")
 
 // Create New Event Remidner Service
@@ -125,6 +125,18 @@ exports.sendFormReminderToGroupsService = (req, res) => {
             return;
         }
         else {
+            // Send Form Reminder Email
+            for (let i = 0; i < result.students.length; i++) {
+                const emailOptions = formReminderEmailOptions(result.form[0], result.students[i]);
+                sendEmail(emailOptions, (mail_error) => {
+                    if (mail_error) {
+                        res.status(500).json({
+                            Error: mail_error,
+                            status: false
+                        })
+                    }
+                })
+            }
             res.status(200).json({
                 Msg: "Redminer sent to Groups",
                 status: true
