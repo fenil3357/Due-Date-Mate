@@ -1,6 +1,7 @@
 const reminderModel = require("../models/reminder.model")
 const { eventReminderEmailOptions, formReminderEmailOptions } = require("../helper/mailOptions")
 const sendEmail = require("../helper/mailHelper")
+const {eventReminderScheduler, formReminderScheduler} = require("../helper/scheduleMail")
 
 // Create New Event Remidner Service
 exports.createEventService = (req, res) => {
@@ -96,6 +97,9 @@ exports.sendEventReminderToGroupsService = (req, res) => {
                 })
             }
 
+            // Schedule Reminder Emails
+            eventReminderScheduler(result);
+
             res.status(200).json({
                 Msg: "Redminer sent to Groups",
                 status: true
@@ -137,6 +141,10 @@ exports.sendFormReminderToGroupsService = (req, res) => {
                     }
                 })
             }
+
+            // Schedule Reminder Emails
+            formReminderScheduler(result);
+            
             res.status(200).json({
                 Msg: "Redminer sent to Groups",
                 status: true
