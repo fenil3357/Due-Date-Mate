@@ -48,7 +48,7 @@ const Login = () => {
           localStorage.clear();
           localStorage.setItem("accessToken", res.data.token);
           localStorage.setItem("faculty", JSON.stringify(res.data.Faculty));
-          navigate("/dashboard");
+          window.location.reload()
         }
       })
       .catch((err) => {

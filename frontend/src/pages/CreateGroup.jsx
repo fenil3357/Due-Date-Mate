@@ -58,7 +58,7 @@ const AddStudents = ({ groupId }) => {
           setLoading(false);
         } else {
           setLoading(false);
-          alert(JSON.stringify(res.data));
+          navigate("/dashboard")
         }
       })
       .catch((err) => {

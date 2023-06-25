@@ -54,10 +54,12 @@ const Dashboard = () => {
   };
 
   useEffect((e) => {
-    if (localStorage.getItem("accessToken") === null) {
+    if (localStorage.getItem("accessToken") === null || localStorage.getItem("faculty") === null) {
       navigate("/login");
     }
-    loadGroups();
+    else {
+      loadGroups();
+    }
   }, [navigate]);
 
   return (
