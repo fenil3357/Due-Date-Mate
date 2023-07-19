@@ -33,7 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/groups" element={<Group />} />
+        <Route path="/group/" element={<Group/>} />
         <Route path="/create-group" element={<CreateGroup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/set-reminder" element={<SetReminder />} />
